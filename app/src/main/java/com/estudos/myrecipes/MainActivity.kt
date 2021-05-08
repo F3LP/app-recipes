@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
         print("commit")
+        print("commit2")
     }
 
 
