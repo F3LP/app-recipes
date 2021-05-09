@@ -1,4 +1,4 @@
-package com.estudos.myrecipes
+package com.br.myrecipes
 
 import android.os.Bundle
 import android.view.Menu

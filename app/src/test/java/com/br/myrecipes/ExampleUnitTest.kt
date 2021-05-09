@@ -1,4 +1,4 @@
-package com.estudos.myrecipes
+package com.br.myrecipes
 
 import org.junit.Test
 
