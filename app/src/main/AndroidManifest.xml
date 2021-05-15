@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRecipes">
         <activity
-            android:name="com.br.myrecipes.MainActivity"
+            android:name="com.br.myrecipes.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyRecipes.NoActionBar">
             <intent-filter>
