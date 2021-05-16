@@ -36,11 +36,14 @@ class IngredientDAOTest {
     @Test
     fun testGetIngredient() = runBlocking {
 
-//        val expected = Ingredient(1, "leite", 1, 1L)
-//        ingredientDAO.saveIngredients(expected)
+//        val unitOfMeasurement = UnitOfMeasurement(1, "colher", "spoon")
+//
+//        val expected = Ingredient(1, "leite", 1, unitOfMeasurement.unitOfMeasurementId ?: 0)
+//        ingredientDAO.saveIngredient(expected)
 //        val actual = ingredientDAO.getIngredientById(1).first()
 //
 //        Assert.assertEquals(expected, actual)
     }
+
 
 }

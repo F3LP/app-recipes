@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import com.br.myrecipes.data.model.Category
 import com.br.myrecipes.data.model.Ingredient
 import com.br.myrecipes.data.model.Recipe
+import com.br.myrecipes.data.model.UnitOfMeasurement
 
 @Database(entities = [Recipe::class, Ingredient::class, Category::class, UnitOfMeasurement::class], version = 1)
 abstract class RecipeDatabase: RoomDatabase() {
@@ -14,6 +15,8 @@ abstract class RecipeDatabase: RoomDatabase() {
     abstract fun recipeDAO(): RecipeDAO
     abstract fun categoryDAO(): CategoryDAO
     abstract fun ingredientDAO(): IngredientDAO
+    abstract fun recipeWithIngredientsDAO(): RecipeWithIngredientsDAO
+    abstract fun unitOfMeasurementDAO(): UnitOfMeasurementDAO
 
     companion object {
 
