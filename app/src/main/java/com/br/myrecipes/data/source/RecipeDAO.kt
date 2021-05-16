@@ -3,8 +3,9 @@ package com.br.myrecipes.data.source
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
-import com.br.myrecipes.data.model.Ingredient
+import androidx.room.Query
 import com.br.myrecipes.data.model.Recipe
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface RecipeDAO {
@@ -12,6 +13,7 @@ interface RecipeDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveRecipe(recipe: Recipe)
 
-    @Insert
-    fun saveIngredents(ingredient: Ingredient)
+    @Query("SELECT * FROM recipe WHERE recipeId = :id")
+    fun getRecipeById(id: Int): Flow<Recipe>
+
 }
