@@ -14,8 +14,7 @@ abstract class RecipeDatabase: RoomDatabase() {
 
     abstract fun recipeDAO(): RecipeDAO
     abstract fun categoryDAO(): CategoryDAO
-    abstract fun ingredientDAO(): IngredientDAO
-    abstract fun recipeWithIngredientsDAO(): RecipeWithIngredientsDAO
+    //abstract fun ingredientDAO(): IngredientDAO
     abstract fun unitOfMeasurementDAO(): UnitOfMeasurementDAO
 
     companion object {

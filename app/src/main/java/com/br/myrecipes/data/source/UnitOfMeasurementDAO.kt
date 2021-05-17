@@ -16,7 +16,7 @@ interface UnitOfMeasurementDAO {
 //    @Query("SELECT * FROM unit_of_measurement WHERE unitOfMeasurementId = :id")
 //    fun getUnitOfMeasurementById(id: Int): Flow<UnitOfMeasurementDAO>
 
-    @Query("SELECT * FROM unit_of_measurement")
+    @Query("SELECT * FROM unit_of_measurements")
     fun getAllUnitOfMeasurement(): Flow<List<UnitOfMeasurement>>
 
 }

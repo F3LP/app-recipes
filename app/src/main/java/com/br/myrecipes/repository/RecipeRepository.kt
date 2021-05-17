@@ -5,5 +5,7 @@ import com.br.myrecipes.data.model.Recipe
 
 class RecipeRepository(private val recipeDAO: RecipeDAO) {
 
-    fun saveRecipe(recipe: Recipe) = recipeDAO.saveRecipe(recipe)
+    fun saveRecipe(recipe: Recipe) {
+        //recipeDAO.saveRecipe(recipe)
+    }
 }

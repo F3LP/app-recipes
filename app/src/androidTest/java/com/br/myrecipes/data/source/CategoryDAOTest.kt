@@ -37,13 +37,13 @@ class CategoryDAOTest {
 
     @Test
     fun testGetCategory() = runBlocking {
+        val expected = Category(name ="name", namePt = "nome")
 
-        categoryDAO.saveCategory(Category(1, "name", "nome"))
+        categoryDAO.saveCategory(expected)
         val category = categoryDAO.getCategoryById(1).first()
 
-        assertEquals(1, category.categoryId)
-        assertEquals("name", category.name)
-        assertEquals("nome", category.namePt)
+        assertEquals(1L, category.categoryId)
+        assertEquals(expected.name, category.name)
+        assertEquals(expected.namePt, category.namePt)
     }
-
 }

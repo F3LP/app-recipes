@@ -25,7 +25,7 @@ class IngredientDAOTest {
     fun createDb() = runBlocking {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         database = Room.inMemoryDatabaseBuilder(context, RecipeDatabase::class.java).build()
-        ingredientDAO = database.ingredientDAO()
+        //ingredientDAO = database.ingredientDAO()
     }
 
     @After

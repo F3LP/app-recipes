@@ -36,17 +36,13 @@ class UnitOfMeasurementDAOTest {
     }
 
     @Test
-    fun testSaveRecipeAndIngredients() = runBlocking {
-
+    fun testSaveUnitOfMeasurement() = runBlocking {
         val expected = UnitOfMeasurement( name ="colher", namePt = "spoon")
-        val expected2 = UnitOfMeasurement( name ="kg", namePt = "kg")
 
         unitOfMeasurementDAO.saveUnitOfMeasurements(expected)
-        unitOfMeasurementDAO.saveUnitOfMeasurements(expected2)
-
         val listUnit = unitOfMeasurementDAO.getAllUnitOfMeasurement().first()
 
-        assertEquals(1, listUnit[0].unitOfMeasurementId)
+        assertEquals(1L, listUnit[0].unitOfMeasurementId)
         assertEquals(expected.name, listUnit[0].name)
         assertEquals(expected.namePt, listUnit[0].namePt)
     }

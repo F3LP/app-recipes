@@ -13,7 +13,6 @@ interface CategoryDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveCategory(category: Category)
 
-    @Query("SELECT * FROM category WHERE categoryId = :id")
+    @Query("SELECT * FROM categories WHERE categoryId = :id")
     fun getCategoryById(id: Int): Flow<Category>
-
 }

@@ -5,9 +5,11 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "recipe", foreignKeys = [ForeignKey(entity = Category::class, parentColumns = ["categoryId"], childColumns = ["categoryId"])])
-class Recipe (
-    @PrimaryKey(autoGenerate = true) val recipeId: Long? = null,
+@Entity(tableName = "recipes",
+    foreignKeys = [ForeignKey(entity = Category::class, parentColumns = ["categoryId"],
+        childColumns = ["categoryId"])])
+class Recipe(
+    @PrimaryKey(autoGenerate = true) val recipeId: Long = 0,
     val name: String,
     val pictureUrl: String,
     val utensils: String,
