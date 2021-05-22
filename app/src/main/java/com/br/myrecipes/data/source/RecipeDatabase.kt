@@ -9,7 +9,7 @@ import com.br.myrecipes.data.model.Ingredient
 import com.br.myrecipes.data.model.Recipe
 import com.br.myrecipes.data.model.UnitOfMeasurement
 
-@Database(entities = [Recipe::class, Ingredient::class, Category::class, UnitOfMeasurement::class], version = 1)
+@Database(entities = [Recipe::class, Ingredient::class, Category::class, UnitOfMeasurement::class], version = 1, exportSchema = false)
 abstract class RecipeDatabase: RoomDatabase() {
 
     abstract fun recipeDAO(): RecipeDAO

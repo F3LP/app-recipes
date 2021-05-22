@@ -6,8 +6,8 @@ import androidx.room.Relation
 data class RecipeWithIngredients (
     @Embedded val recipe: Recipe,
     @Relation(
-        parentColumn = "recipeId",
-        entityColumn = "recipeId"
+        parentColumn = "recipe_id",
+        entityColumn = "recipe_id"
     )
     val ingredients: List<Ingredient>
 )

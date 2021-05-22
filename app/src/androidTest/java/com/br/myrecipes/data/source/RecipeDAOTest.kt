@@ -10,7 +10,7 @@ import com.br.myrecipes.data.model.UnitOfMeasurement
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
-import org.junit.Assert
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -65,11 +65,11 @@ class RecipeDAOTest {
         )
 
         val recipeExpected = recipeDAO.getRecipeById(1).first()
-        Assert.assertEquals(1L, recipeExpected.recipe.recipeId)
-        Assert.assertEquals(recipeActual.name, recipeExpected.recipe.name)
-        Assert.assertEquals(recipeActual.categoryId, recipeExpected.recipe.categoryId)
-        Assert.assertEquals(recipeActual.directions, recipeExpected.recipe.directions)
-        Assert.assertEquals(1, recipeExpected.ingredients.size)
-        Assert.assertEquals("ovo", recipeExpected.ingredients[0].name)
+        assertEquals(1L, recipeExpected.recipe.recipeId)
+        assertEquals(recipeActual.name, recipeExpected.recipe.name)
+        assertEquals(recipeActual.categoryId, recipeExpected.recipe.categoryId)
+        assertEquals(recipeActual.directions, recipeExpected.recipe.directions)
+        assertEquals(1, recipeExpected.ingredients.size)
+        assertEquals("ovo", recipeExpected.ingredients[0].name)
     }
 }
