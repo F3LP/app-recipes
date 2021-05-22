@@ -24,6 +24,7 @@ buildscript {
         recyclerViewVersion = '1.2.0'
         hilt_version = '2.35'
         coreTestingVersion = '2.1.0'
+        mockitoVersion = '3.10.0'
     }
 
     repositories {
