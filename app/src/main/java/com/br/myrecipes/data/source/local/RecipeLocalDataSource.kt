@@ -7,8 +7,6 @@ import kotlinx.coroutines.flow.Flow
 
 class RecipeLocalDataSource(private val recipeDao: RecipeDAO): RecipeDataSource {
 
-
     override fun getAllRecipes(): Flow<List<Recipe>> =
         recipeDao.getAll()
-
 }
