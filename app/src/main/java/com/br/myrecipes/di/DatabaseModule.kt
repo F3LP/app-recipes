@@ -2,7 +2,9 @@ package com.br.myrecipes.di
 
 import android.content.Context
 import com.br.myrecipes.data.source.RecipeDAO
+import com.br.myrecipes.data.source.RecipeDataSource
 import com.br.myrecipes.data.source.RecipeDatabase
+import com.br.myrecipes.data.source.local.RecipeLocalDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,8 +27,8 @@ class DatabaseModule {
         return recipeDatabase.recipeDAO()
     }
 
-//    @Provides
-//    fun provideRecipeDatasource(recipeDAO: RecipeDAO): RecipeDataSource {
-//        return RecipeLocalDataSource(recipeDAO)
-//    }
+    @Provides
+    fun provideRecipeDatasource(recipeDAO: RecipeDAO): RecipeDataSource {
+        return RecipeLocalDataSource(recipeDAO)
+    }
 }
