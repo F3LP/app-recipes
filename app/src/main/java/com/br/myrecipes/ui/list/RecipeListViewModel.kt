@@ -15,7 +15,7 @@ import javax.inject.Inject
 class RecipeListViewModel @Inject constructor(private val useCase: GetAllRecipesUseCase): ViewModel() {
 
     init {
-//        getRecipes()
+        getRecipes()
     }
 
     private val _recipes = MutableLiveData<List<Recipe>>()
@@ -24,7 +24,8 @@ class RecipeListViewModel @Inject constructor(private val useCase: GetAllRecipes
     private fun getRecipes() {
         viewModelScope.launch {
             useCase().collect {
-                _recipes.value = it
+                if(it.isNotEmpty())
+                    _recipes.postValue(it)
             }
         }
     }

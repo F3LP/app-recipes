@@ -1,29 +1,27 @@
 package com.br.myrecipes.ui.list
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.room.Room
-import androidx.test.platform.app.InstrumentationRegistry
 import com.br.myrecipes.MainCoroutineRule
 import com.br.myrecipes.data.model.Category
 import com.br.myrecipes.data.model.Recipe
-import com.br.myrecipes.data.source.RecipeDatabase
-import com.br.myrecipes.repository.RecipeRepository
+import com.br.myrecipes.data.source.CategoryDAO
+import com.br.myrecipes.data.source.RecipeDAO
 import com.br.myrecipes.runBlockingTest
 import com.br.myrecipes.usecases.GetAllRecipesUseCase
+import com.br.myrecipes.utilities.getValue
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
-import kotlinx.coroutines.flow.collect
-import org.junit.After
+import junit.framework.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.RuleChain
 import javax.inject.Inject
 
+@Suppress("BlockingMethodInNonBlockingContext")
 @HiltAndroidTest
 class RecipeListViewModelTest {
 
-    private lateinit var recipeDatabase: RecipeDatabase
     private lateinit var recipeListViewModel: RecipeListViewModel
     private val hiltRule = HiltAndroidRule(this)
     private val instantTaskExecutorRule = InstantTaskExecutorRule()
@@ -39,29 +37,22 @@ class RecipeListViewModelTest {
     lateinit var useCase: GetAllRecipesUseCase
 
     @Inject
-    lateinit var repository: RecipeRepository
+    lateinit var categoryDAO: CategoryDAO
+
+    @Inject
+    lateinit var recipeDAO: RecipeDAO
 
     @Before
     fun setUp() {
         hiltRule.inject()
-
-        val context = InstrumentationRegistry.getInstrumentation().targetContext
-        recipeDatabase = Room.inMemoryDatabaseBuilder(context, RecipeDatabase::class.java).build()
         recipeListViewModel = RecipeListViewModel(useCase)
     }
 
-    @After
-    fun tearDown() {
-        recipeDatabase.close()
-    }
 
     @Test
     fun getRecipes() = coroutineRule.runBlockingTest {
         saveRecipe()
-        repository.getAll().collect {
-            println("#######")
-        }
-        //assertTrue(getValue(recipeListViewModel.recipes).size == 5)
+        assertTrue(getValue(recipeListViewModel.recipes).size == 5)
     }
 
     private fun createFakeRecipe() = Recipe(
@@ -75,10 +66,9 @@ class RecipeListViewModelTest {
     )
 
     private suspend fun saveRecipe() {
-        recipeDatabase.categoryDAO().saveCategory(Category(name = "name", namePt = "nome"))
+        categoryDAO.saveCategory(Category(name = "name", namePt = "nome"))
         for (recipe in 1..5) {
-            recipeDatabase.recipeDAO().saveRecipe(createFakeRecipe())
+            recipeDAO.saveRecipe(createFakeRecipe())
         }
-        println("&&&&")
     }
 }
