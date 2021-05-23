@@ -22,7 +22,7 @@ abstract class RecipeDatabase: RoomDatabase() {
         @Volatile
         private var INSTANCE: RecipeDatabase? = null
 
-        fun getDatabase(context: Context): RecipeDatabase {
+        fun getInstance(context: Context): RecipeDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
