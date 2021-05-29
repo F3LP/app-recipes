@@ -4,13 +4,14 @@
 
     <application
         android:allowBackup="true"
+        android:name=".MyRecipesApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyRecipes">
         <activity
-            android:name="com.br.myrecipes.MainActivity"
+            android:name="com.br.myrecipes.ui.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyRecipes.NoActionBar">
             <intent-filter>

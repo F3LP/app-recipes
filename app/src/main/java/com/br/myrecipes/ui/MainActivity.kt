@@ -1,9 +1,10 @@
-package com.br.myrecipes
+package com.br.myrecipes.ui
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.br.myrecipes.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
