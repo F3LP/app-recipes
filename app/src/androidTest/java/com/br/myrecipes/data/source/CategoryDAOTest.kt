@@ -37,7 +37,7 @@ class CategoryDAOTest {
 
     @Test
     fun testGetCategory() = runBlocking {
-        val expected = Category(name ="name", namePt = "nome")
+        val expected = Category(name = "name", namePt = "nome")
 
         categoryDAO.saveCategory(expected)
         val category = categoryDAO.getCategoryById(1).first()

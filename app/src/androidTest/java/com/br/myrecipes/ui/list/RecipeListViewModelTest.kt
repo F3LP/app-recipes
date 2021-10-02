@@ -48,7 +48,6 @@ class RecipeListViewModelTest {
         recipeListViewModel = RecipeListViewModel(useCase)
     }
 
-
     @Test
     fun getRecipes() = coroutineRule.runBlockingTest {
         saveRecipe()

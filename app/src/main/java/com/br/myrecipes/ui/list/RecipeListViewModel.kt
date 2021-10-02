@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RecipeListViewModel @Inject constructor(private val useCase: GetAllRecipesUseCase): ViewModel() {
+class RecipeListViewModel @Inject constructor(private val useCase: GetAllRecipesUseCase) : ViewModel() {
 
     init {
         getRecipes()
@@ -24,7 +24,7 @@ class RecipeListViewModel @Inject constructor(private val useCase: GetAllRecipes
     private fun getRecipes() {
         viewModelScope.launch {
             useCase().collect {
-                if(it.isNotEmpty())
+                if (it.isNotEmpty())
                     _recipes.postValue(it)
             }
         }

@@ -18,8 +18,8 @@ class RecipeRepositoryTest {
     }
 
     @Test
-    fun getAll() {
-        repository.getAll()
+    fun getAllRecipes() {
+        repository.getAllRepository()
         verify(datasource, times(1)).getAllRecipes()
     }
 }

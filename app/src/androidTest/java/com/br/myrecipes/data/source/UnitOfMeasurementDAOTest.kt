@@ -37,7 +37,7 @@ class UnitOfMeasurementDAOTest {
 
     @Test
     fun testSaveUnitOfMeasurement() = runBlocking {
-        val expected = UnitOfMeasurement( name ="colher", namePt = "spoon")
+        val expected = UnitOfMeasurement(name = "colher", namePt = "spoon")
 
         unitOfMeasurementDAO.saveUnitOfMeasurements(expected)
         val listUnit = unitOfMeasurementDAO.getAllUnitOfMeasurement().first()

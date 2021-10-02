@@ -11,7 +11,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @RunWith(AndroidJUnit4::class)
 class IngredientDAOTest {
 
@@ -25,7 +24,7 @@ class IngredientDAOTest {
     fun createDb() = runBlocking {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         database = Room.inMemoryDatabaseBuilder(context, RecipeDatabase::class.java).build()
-        //ingredientDAO = database.ingredientDAO()
+        // ingredientDAO = database.ingredientDAO()
     }
 
     @After
@@ -44,6 +43,4 @@ class IngredientDAOTest {
 //
 //        Assert.assertEquals(expected, actual)
     }
-
-
 }

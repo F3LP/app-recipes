@@ -18,5 +18,4 @@ interface UnitOfMeasurementDAO {
 
     @Query("SELECT * FROM unit_of_measurements")
     fun getAllUnitOfMeasurement(): Flow<List<UnitOfMeasurement>>
-
 }

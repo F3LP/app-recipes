@@ -18,5 +18,4 @@ interface IngredientDAO {
 //
 //    @Query("SELECT * FROM ingredient")
 //    fun getAllIngredients(): Flow<Ingredient>
-
 }

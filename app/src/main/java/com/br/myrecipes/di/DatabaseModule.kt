@@ -5,6 +5,7 @@ import com.br.myrecipes.data.source.CategoryDAO
 import com.br.myrecipes.data.source.RecipeDAO
 import com.br.myrecipes.data.source.RecipeDataSource
 import com.br.myrecipes.data.source.RecipeDatabase
+import com.br.myrecipes.data.source.UnitOfMeasurementDAO
 import com.br.myrecipes.data.source.local.RecipeLocalDataSource
 import dagger.Module
 import dagger.Provides
@@ -36,5 +37,10 @@ object DatabaseModule {
     @Provides
     fun provideCategoryDAO(recipeDatabase: RecipeDatabase): CategoryDAO {
         return recipeDatabase.categoryDAO()
+    }
+
+    @Provides
+    fun provideUnitOfMeasurementDAO(recipeDatabase: RecipeDatabase): UnitOfMeasurementDAO {
+        return recipeDatabase.unitOfMeasurementDAO()
     }
 }

@@ -9,6 +9,5 @@ import javax.inject.Singleton
 @Singleton
 class RecipeRepository @Inject constructor(private val recipeDataSource: RecipeDataSource) {
 
-    fun getAll(): Flow<List<Recipe>> = recipeDataSource.getAllRecipes()
-
+    fun getAllRepository(): Flow<List<Recipe>> = recipeDataSource.getAllRecipes()
 }

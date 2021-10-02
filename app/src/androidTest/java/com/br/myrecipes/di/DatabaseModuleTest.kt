@@ -10,8 +10,8 @@ import com.br.myrecipes.data.source.local.RecipeLocalDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.testing.TestInstallIn
 import dagger.hilt.components.SingletonComponent
+import dagger.hilt.testing.TestInstallIn
 import javax.inject.Singleton
 
 @TestInstallIn(
@@ -41,5 +41,4 @@ class DatabaseModuleTest {
     fun provideRecipeDatasource(recipeDAO: RecipeDAO): RecipeDataSource {
         return RecipeLocalDataSource(recipeDAO)
     }
-
 }

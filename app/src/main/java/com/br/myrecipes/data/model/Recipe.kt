@@ -5,9 +5,15 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "recipes",
-    foreignKeys = [ForeignKey(entity = Category::class, parentColumns = ["category_id"],
-        childColumns = ["category_id"])])
+@Entity(
+    tableName = "recipes",
+    foreignKeys = [
+        ForeignKey(
+            entity = Category::class, parentColumns = ["category_id"],
+            childColumns = ["category_id"]
+        )
+    ]
+)
 class Recipe(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "recipe_id")
@@ -21,7 +27,3 @@ class Recipe(
     @ColumnInfo(name = "category_id", index = true)
     val categoryId: Long
 )
-
-
-
-

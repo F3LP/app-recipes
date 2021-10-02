@@ -55,7 +55,8 @@ class RecipeDAOTest {
         )
 
         recipeDAO.saveRecipeWithIngredients(
-            recipeActual, listOf(
+            recipeActual,
+            listOf(
                 Ingredient(
                     name = "ovo",
                     quantity = 4,

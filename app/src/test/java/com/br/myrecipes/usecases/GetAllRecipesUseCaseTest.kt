@@ -20,6 +20,6 @@ class GetAllRecipesUseCaseTest {
     @Test
     operator fun invoke() {
         useCase()
-        verify(repository, times(1)).getAll()
+        verify(repository, times(1)).getAllRepository()
     }
 }

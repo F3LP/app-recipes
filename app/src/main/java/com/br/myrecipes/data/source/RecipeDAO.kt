@@ -1,6 +1,10 @@
 package com.br.myrecipes.data.source
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Transaction
 import com.br.myrecipes.data.model.Ingredient
 import com.br.myrecipes.data.model.Recipe
 import com.br.myrecipes.data.model.RecipeWithIngredients
@@ -12,8 +16,9 @@ interface RecipeDAO {
     @Transaction
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveRecipeWithIngredients(recipe: Recipe, ingredients: List<Ingredient>) {
+
         val recipeId = saveRecipe(recipe)
-        ingredients.forEach { ingredient ->  ingredient.recipeId = recipeId }
+        ingredients.forEach { ingredient -> ingredient.recipeId = recipeId }
         saveIngredients(ingredients)
     }
 

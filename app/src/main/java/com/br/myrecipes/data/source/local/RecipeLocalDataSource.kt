@@ -6,8 +6,8 @@ import com.br.myrecipes.data.source.RecipeDataSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-//@Singleton
-class RecipeLocalDataSource @Inject constructor(private val recipeDao: RecipeDAO): RecipeDataSource {
+// @Singleton
+class RecipeLocalDataSource @Inject constructor(private val recipeDao: RecipeDAO) : RecipeDataSource {
 
     override fun getAllRecipes(): Flow<List<Recipe>> =
         recipeDao.getAll()
